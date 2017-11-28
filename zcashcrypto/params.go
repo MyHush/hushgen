@@ -1,4 +1,4 @@
-package zcashcrypto
+package hushcrypto
 
 type NetworkId [2]byte
 type Prefix [1]byte

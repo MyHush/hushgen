@@ -1,5 +1,5 @@
-// Standalone library to generate zcash addresses
-package zcashcrypto
+// Standalone library to generate hush addresses
+package hushcrypto
 
 import (
 	"encoding/hex"
@@ -7,21 +7,21 @@ import (
 	"strings"
 
 	"github.com/blackkeyboard/mneumonic"
-	"github.com/blackkeyboard/zgenerate/base58"
+	"github.com/TheTrunk/hushgen/base58"
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcutil"
 	"github.com/btcsuite/btcutil/hdkeychain"
 	"github.com/btcsuite/golangcrypto/ripemd160"
 )
 
-type ZcashWallet struct {
+type HushWallet struct {
 	Passphrase string         `json:"passphrase"`
 	HexSeed    string         `json:"hexSeed"`
-	Addresses  []ZcashAddress `json:"addresses"`
+	Addresses  []HushAddress `json:"addresses"`
 	RequestId  string         `json:"requestId"`
 }
 
-type ZcashAddress struct {
+type HushAddress struct {
 	Value      string `json:"value"`
 	PublicKey  string `json:"publicKey"`
 	PrivateKey string `json:"privateKey"`
@@ -68,8 +68,8 @@ func getExtendedKeyFromPassphrase(mainnet bool, passphrase string) (*hdkeychain.
 	return extAcct0, nil
 }
 
-func getAddressFromPassphrase(mainnet bool, passphrase string, position uint32) (ZcashAddress, error) {
-	var returnValue ZcashAddress
+func getAddressFromPassphrase(mainnet bool, passphrase string, position uint32) (HushAddress, error) {
+	var returnValue HushAddress
 	var networkId NetworkId
 	var networkCfg chaincfg.Params
 
@@ -122,8 +122,8 @@ func getAddressFromPassphrase(mainnet bool, passphrase string, position uint32) 
 	return returnValue, nil
 }
 
-func CreateWallet(mainnet bool, numberOfAddressesToGenerate int) (ZcashWallet, error) {
-	var wallet ZcashWallet
+func CreateWallet(mainnet bool, numberOfAddressesToGenerate int) (HushWallet, error) {
+	var wallet HushWallet
 	var numAddresses int
 	var networkId NetworkId
 	var networkCfg chaincfg.Params
@@ -157,7 +157,7 @@ func CreateWallet(mainnet bool, numberOfAddressesToGenerate int) (ZcashWallet, e
 
 	// Derive extended key (repeat this from 0 to number of addresses-1)
 	for i := 0; i <= numAddresses-1; i++ {
-		var address ZcashAddress
+		var address HushAddress
 
 		key, err := extendedKey.Child(uint32(i))
 		if err != nil {
@@ -196,9 +196,9 @@ func CreateWallet(mainnet bool, numberOfAddressesToGenerate int) (ZcashWallet, e
 	return wallet, nil
 }
 
-func GetWalletFromPassphrase(mainnet bool, passphrase string, position uint32) (ZcashWallet, error) {
-	var result ZcashWallet
-	var address ZcashAddress
+func GetWalletFromPassphrase(mainnet bool, passphrase string, position uint32) (HushWallet, error) {
+	var result HushhWallet
+	var address HushAddress
 
 	address, err := getAddressFromPassphrase(mainnet, passphrase, position)
 

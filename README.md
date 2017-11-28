@@ -1,11 +1,11 @@
 # zgenerate
 
-Offline BIP32 HD wallet and vanity address generator for ZCash.
+Offline BIP32 HD wallet and vanity address generator for Hush.
 
 Currently returns the first address associated with m/0'/0/0 (hardened key for account 0/external account)
 
 ##Pre-requisites
-* Golang 1.7.3 (lower versions may work but this is what I developed with)
+* Golang 1.7.3 (altought lower versions may work)
 * Git
 
 ##Build
@@ -26,7 +26,7 @@ go install github.com/blackkeyboard/zgenerate/zretrieve
 ##Usage
 To generate a wallet:
 ~~~~
-zgenerate [-t] [-n 1]
+generate [-t] [-n 1]
 
 Options
 -t generate testnet addresses
@@ -36,7 +36,7 @@ Options
 To retrieve addresses generated from your HD wallet:
 	
 ~~~~
-zretrieve -passphrase=<passphrase> [-t] [-n 1] [-match="regex string"] [-i]
+retrieve -passphrase=<passphrase> [-t] [-n 1] [-match="regex string"] [-i]
 
 Options
 -t generate testnet addresses	
@@ -47,13 +47,13 @@ Options
 
 eg. Search case insensitive for a vanity address which starts with the string "t1jl"
 ~~~~
-zretrieve -passphrase="board start difference answer blossom roll powerful million rough butterfly bedroom beam" -match "^t1jl" -i
+retrieve -passphrase="board start difference answer blossom roll powerful million rough butterfly bedroom beam" -match "^t1jl" -i
 ~~~~
 
 Note: The maximum number of addresses that can be searched given a wallet passphrase is restricted to 4,294,967,295 (unsigned 32 bit integer). Depending on your version of Go, case insensitive matching may be slow. https://github.com/golang/go/issues/13288.
 
-To import the private key into ZCash:
+To import the private key into Hushh:
 ~~~~
-./zcash-cli importprivkey "private_key_from_zgenerate"
+./hushh-cli importprivkey "private_key_from_generate"
 ~~~~
-Zcashd will automatically rescan the blockchain for transactions
+Hushd will automatically rescan the blockchain for transactions

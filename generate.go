@@ -4,17 +4,17 @@ import (
 	"flag"
 	"log"
 
-	"github.com/blackkeyboard/zgenerate/zcashcrypto"
+	"github.com/TheTrunk/hushgen/hushcrypto"
 )
 
 func main() {
-	//	var networkId zcashcrypto.NetworkId
+	//	var networkId hushcrypto.NetworkId
 	boolPtr := flag.Bool("test", false, "generate a testnet wallet")
 	nPtr := flag.Int("n", 1, "Number of addresses to generate")
 	flag.Parse()
 
 	// Generate the wallet
-	wallet, err := zcashcrypto.CreateWallet(!(*boolPtr), *nPtr)
+	wallet, err := hushcrypto.CreateWallet(!(*boolPtr), *nPtr)
 
 	if err != nil {
 		log.Panicln(err.Error())

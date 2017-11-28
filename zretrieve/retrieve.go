@@ -7,7 +7,7 @@ import (
 	"math"
 	"regexp"
 
-	"github.com/blackkeyboard/zgenerate/zcashcrypto"
+	"github.com/blackkeyboard/hushgen/hushcrypto"
 )
 
 func main() {
@@ -55,7 +55,7 @@ func main() {
 
 	var i uint32
 	for i = 0; i <= numAddresses-1; i++ {
-		wallet, err := zcashcrypto.GetWalletFromPassphrase(!test, passphrase, uint32(i))
+		wallet, err := hushcrypto.GetWalletFromPassphrase(!test, passphrase, uint32(i))
 
 		if err != nil {
 			log.Panicln(err.Error())
