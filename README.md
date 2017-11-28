@@ -1,4 +1,4 @@
-# HUSHgenerate
+# HUSHgen
 
 Offline BIP32 HD wallet and vanity address generator for Hush.
 
