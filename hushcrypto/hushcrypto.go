@@ -197,7 +197,7 @@ func CreateWallet(mainnet bool, numberOfAddressesToGenerate int) (HushWallet, er
 }
 
 func GetWalletFromPassphrase(mainnet bool, passphrase string, position uint32) (HushWallet, error) {
-	var result HushhWallet
+	var result HushWallet
 	var address HushAddress
 
 	address, err := getAddressFromPassphrase(mainnet, passphrase, position)
