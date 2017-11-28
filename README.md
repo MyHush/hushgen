@@ -51,8 +51,8 @@ hushretrieve -passphrase="board start difference answer blossom roll powerful mi
 
 Note: The maximum number of addresses that can be searched given a wallet passphrase is restricted to 4,294,967,295 (unsigned 32 bit integer). Depending on your version of Go, case insensitive matching may be slow. https://github.com/golang/go/issues/13288.
 
-To import the private key into Hushh:
+To import the private key into Hush:
 ~~~~
-./hushh-cli importprivkey "private_key_from_hushgen"
+./hush-cli importprivkey "private_key_from_hushgen"
 ~~~~
 Hushd will automatically rescan the blockchain for transactions
