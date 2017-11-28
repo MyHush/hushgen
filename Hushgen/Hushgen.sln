@@ -7,14 +7,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		..\.gitattributes = ..\.gitattributes
 		..\.gitignore = ..\.gitignore
-		..\generate.go = ..\generate.go
+		..\hushgen.go = ..\hushgen.go
 		..\LICENSE = ..\LICENSE
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "retrieve", "retrieve", "{73C1E579-4B87-4E61-9256-C3F28CB6B9CF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hushretrieve", "hushretrieve", "{73C1E579-4B87-4E61-9256-C3F28CB6B9CF}"
 	ProjectSection(SolutionItems) = preProject
-		..\zretrieve\retrieve.go = ..\zretrieve\retrieve.go
+		..\zretrieve\hushretrieve.go = ..\zretrieve\hushretrieve.go
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hushcrypto", "hushcrypto", "{094A5479-09FE-486B-A2ED-53112D01A3F5}"

@@ -1,4 +1,4 @@
-# zgenerate
+# HUSHgenerate
 
 Offline BIP32 HD wallet and vanity address generator for Hush.
 
@@ -10,23 +10,22 @@ Currently returns the first address associated with m/0'/0/0 (hardened key for a
 
 ##Build
 ~~~~
-go get -u github.com/btcsuite/btcutil
-go get -u github.com/blackkeyboard/mneumonic
-go install github.com/blackkeyboard/zgenerate
-go install github.com/blackkeyboard/zgenerate/zretrieve
+go get -u github.com/TheTrunk/hushgen
+go build github.com/TheTrunk/hushgen
+go build github.com/TheTrunk/hushgen/hushretrieve
 ~~~~
 
 ##Update an Existing Install
 ~~~~
-go clean github.com/blackkeyboard/zgenerate
-go install github.com/blackkeyboard/zgenerate
-go install github.com/blackkeyboard/zgenerate/zretrieve
+go clean github.com/TheTrunk/hushgen
+go build github.com/TheTrunk/hushgen
+go build github.com/TheTrunk/hushgen/hushretrieve
 ~~~~
 
 ##Usage
 To generate a wallet:
 ~~~~
-generate [-t] [-n 1]
+hushgen [-t] [-n 1]
 
 Options
 -t generate testnet addresses
@@ -36,7 +35,7 @@ Options
 To retrieve addresses generated from your HD wallet:
 	
 ~~~~
-retrieve -passphrase=<passphrase> [-t] [-n 1] [-match="regex string"] [-i]
+hushretrieve -passphrase=<passphrase> [-t] [-n 1] [-match="regex string"] [-i]
 
 Options
 -t generate testnet addresses	
@@ -47,13 +46,13 @@ Options
 
 eg. Search case insensitive for a vanity address which starts with the string "t1jl"
 ~~~~
-retrieve -passphrase="board start difference answer blossom roll powerful million rough butterfly bedroom beam" -match "^t1jl" -i
+hushretrieve -passphrase="board start difference answer blossom roll powerful million rough butterfly bedroom beam" -match "^t1jl" -i
 ~~~~
 
 Note: The maximum number of addresses that can be searched given a wallet passphrase is restricted to 4,294,967,295 (unsigned 32 bit integer). Depending on your version of Go, case insensitive matching may be slow. https://github.com/golang/go/issues/13288.
 
 To import the private key into Hushh:
 ~~~~
-./hushh-cli importprivkey "private_key_from_generate"
+./hushh-cli importprivkey "private_key_from_hushgen"
 ~~~~
 Hushd will automatically rescan the blockchain for transactions
