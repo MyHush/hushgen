@@ -7,7 +7,7 @@ import (
 	"math"
 	"regexp"
 
-	"github.com/blackkeyboard/hushgen/hushcrypto"
+	"github.com/TheTrunk/hushgen/hushcrypto"
 )
 
 func main() {
