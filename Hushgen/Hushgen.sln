@@ -19,8 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hushretrieve", "hushretriev
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hushcrypto", "hushcrypto", "{094A5479-09FE-486B-A2ED-53112D01A3F5}"
 	ProjectSection(SolutionItems) = preProject
-		..\zcashcrypto\hushcrypto.go = ..\zcashcrypto\hushcrypto.go
-		..\zcashcrypto\params.go = ..\zcashcrypto\params.go
+		..\hushcrypto\hushcrypto.go = ..\hushcrypto\hushcrypto.go
+		..\hushcrypto\params.go = ..\hushcrypto\params.go
 	EndProjectSection
 EndProject
 Global

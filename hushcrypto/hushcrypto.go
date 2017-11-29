@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/blackkeyboard/mneumonic"
+	"github.com/TheTrunk/mneumonic"
 	"github.com/TheTrunk/hushgen/base58"
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcutil"

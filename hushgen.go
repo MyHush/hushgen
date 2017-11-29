@@ -10,7 +10,7 @@ import (
 func main() {
 	//	var networkId hushcrypto.NetworkId
 	boolPtr := flag.Bool("test", false, "generate a testnet wallet")
-	nPtr := flag.Int("n", 1, "Number of addresses to generate")
+	nPtr := flag.Int("n", 1, "Number of addresses to generate up to 100")
 	flag.Parse()
 
 	// Generate the wallet
