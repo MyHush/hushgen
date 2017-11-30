@@ -3,6 +3,9 @@ package main
 import (
 	"flag"
 	"log"
+	"fmt"
+	"bufio"
+	"os"
 
 	"github.com/TheTrunk/hushgen/hushcrypto"
 )
@@ -10,8 +13,11 @@ import (
 func main() {
 	//	var networkId hushcrypto.NetworkId
 	boolPtr := flag.Bool("test", false, "generate a testnet wallet")
-	nPtr := flag.Int("n", 1, "Number of addresses to generate")
+	nPtr := flag.Int("n", 1, "Number of addresses to generate up to 100")
+	boolPtr3 := flag.Bool("o", false, "enable output to file outputhushgen.txt")
 	flag.Parse()
+
+	var output bool = *boolPtr3
 
 	// Generate the wallet
 	wallet, err := hushcrypto.CreateWallet(!(*boolPtr), *nPtr)
@@ -21,10 +27,26 @@ func main() {
 	}
 
 	log.Println("Wallet generated!")
-	log.Printf("Passphrase: %s\n", wallet.Passphrase)
-	log.Printf("Address\t\t\t\tPrivate key")
+	fmt.Println("Passphrase:", wallet.Passphrase)
+	fmt.Println("Address\t\t\t\tPrivate key")
+
+		file, err := os.OpenFile("outputhushgen.txt", os.O_WRONLY|os.O_CREATE, 0666)
+		if err != nil && output == true {
+        fmt.Println("File does not exists or cannot be created")
+        os.Exit(1)
+		}
+	w := bufio.NewWriter(file)
+	if output == true {
+	fmt.Fprintln(w,"Passphrase:", wallet.Passphrase)
+	fmt.Fprintln(w,"Address\t\t\t\t\t\t\t\tPrivate key")
+	w.Flush()
+	}
 
 	for i := 0; i <= len(wallet.Addresses)-1; i++ {
-		log.Printf("%s\t%s\n", wallet.Addresses[i].Value, wallet.Addresses[i].PrivateKey)
+		fmt.Println(wallet.Addresses[i].Value, wallet.Addresses[i].PrivateKey)
+			if output == true {
+				fmt.Fprintln(w,wallet.Addresses[i].Value, wallet.Addresses[i].PrivateKey)
+				w.Flush()
+			}
 	}
 }
