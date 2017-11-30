@@ -34,7 +34,8 @@ Options
 To retrieve addresses generated from your HD wallet:
 	
 ~~~~
-hushretrieve -passphrase=<passphrase> [-test] [-n 1] [-match="regex string"] [-i] [-o]
+<<<<<<< HEAD >>>>>>>
+hushretrieve -passphrase="your desired passphrase" [-test] [-n 1] [-match="t1yourdesiredstring"] [-i] [-o]
 
 Options
 -passphrase Passphrase for the wallet is REQUIRED between 128 and 512 bits
@@ -43,7 +44,6 @@ Options
 -match regex string to search for in the address
 -i case insensitive string matching
 -o enable output to file outputhushretrieve.txt
-
 ~~~~
 
 eg. Search case insensitive for a vanity address which starts with the string "t1jl"
