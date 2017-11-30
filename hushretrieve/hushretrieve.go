@@ -7,6 +7,7 @@ import (
 	"math"
 	"regexp"
 	"os"
+	"time"
 
 	"github.com/TheTrunk/hushgen/hushcrypto"
 )
@@ -57,8 +58,11 @@ func main() {
 
 	var i uint32
 	var a int
+	start := time.Now()
 	for i = 0; i <= numAddresses-1; i++ {
+
 		wallet, err := hushcrypto.GetWalletFromPassphrase(!test, passphrase, uint32(i))
+
 
 		if err != nil {
 			log.Panicln(err.Error())
@@ -77,5 +81,12 @@ func main() {
 		if a == numGenerate {
 		os.Exit(1)
 		}
+		elapsed := time.Since(start)
+		totalelapsed := elapsed.Seconds()
+		if i%20000 == 0 && i!=0 {
+		b:= int64((float64(i)/totalelapsed))
+			log.Println("\rTested:", i, " Running for:",elapsed, " Sol/s:",b)
+		}
+
 	}
 }
