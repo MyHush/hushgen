@@ -50,7 +50,7 @@ Options
 
 eg. Search case insensitive for a vanity address which starts with the string "t1jl"
 ~~~~
-hushretrieve -passphrase="board start difference answer blossom roll powerful million rough butterfly bedroom beam" -match "^t1jl" -i
+hushretrieve -passphrase="board start difference answer blossom roll powerful million rough butterfly bedroom beam" -match "t1jl" -i
 ~~~~
 
 Note: The maximum number of addresses that can be searched given a wallet passphrase is restricted to 4,294,967,295 (unsigned 32 bit integer). 
