@@ -34,11 +34,9 @@ Options
 To retrieve addresses generated from your HD wallet:
 	
 ~~~~
-<<<<<<< HEAD
-hushretrieve -passphrase="<passphrase>" [-t] [-n 1] [-match="t1yourdesiredstring"] [-i]
-=======
-hushretrieve -passphrase=<passphrase> [-test] [-n 1] [-match="regex string"] [-i] [-o]
->>>>>>> development
+<<<<<<< HEAD >>>>>>>
+hushretrieve -passphrase="your desired passphrase" [-test] [-n 1] [-match="t1yourdesiredstring"] [-i] [-o]
+
 
 Options
 -passphrase Passphrase for the wallet is REQUIRED between 128 and 512 bits
