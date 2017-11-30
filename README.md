@@ -2,8 +2,6 @@
 
 Offline BIP32 HD wallet and vanity address generator for Hush.
 
-Currently returns the first address associated with m/0'/0/0 (hardened key for account 0/external account)
-
 ##Pre-requisites
 * Golang 1.7.3 (altought lower versions may work)
 * Git
