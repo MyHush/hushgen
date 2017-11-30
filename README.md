@@ -44,7 +44,6 @@ Options
 -match regex string to search for in the address
 -i case insensitive string matching
 -o enable output to file outputhushretrieve.txt
-
 ~~~~
 
 eg. Search case insensitive for a vanity address which starts with the string "t1jl"
