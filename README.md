@@ -1,4 +1,4 @@
-# HUSHgen
+# HushGen
 
 Offline BIP32 HD wallet and vanity address generator for Hush.
 
@@ -8,16 +8,16 @@ Offline BIP32 HD wallet and vanity address generator for Hush.
 
 ##Build
 ~~~~
-go get -u github.com/TheTrunk/hushgen
-go build github.com/TheTrunk/hushgen
-go build github.com/TheTrunk/hushgen/hushretrieve
+go get -u github.com/MyHush/hushgen
+go build github.com/MyHush/hushgen
+go build github.com/MyHush/hushgen/hushretrieve
 ~~~~
 
 ##Update an Existing Install
 ~~~~
-go clean github.com/TheTrunk/hushgen
-go build github.com/TheTrunk/hushgen
-go build github.com/TheTrunk/hushgen/hushretrieve
+go clean github.com/MyHush/hushgen
+go build github.com/MyHush/hushgen
+go build github.com/MyHush/hushgen/hushretrieve
 ~~~~
 
 ##Usage
